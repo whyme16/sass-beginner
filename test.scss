@@ -1,0 +1,47 @@
+$baseLineHeight: 2;
+$baseLineHeight: 1.5 !default;
+body {
+	line-height: $baseLineHeight;
+}
+
+$brand-primary: darken(#428bca, 6.5%) !default;
+$btn-primary-color: #fff !default;
+$btn-primary-bg: $brand-primary !default;
+$btn-primary-border: darken($btn-primary-bg, 5%) !default;
+
+.btn-primary {
+	background-color: $btn-primary-bg;
+	color: $btn-primary-color;
+	border: 1px solid $btn-primary-border;
+}
+// Selector Nesting
+nav {
+	a {
+		color: red;
+
+		header & {
+			color: green;
+		}
+	}
+}
+// Properties Nesting
+.box {
+	width: 250px;
+	height: 50px;
+	border: {
+		top: 1px solid red;
+		bottom: 1px solid green;
+	}
+}
+// Pseudocode Nesting
+.clearfix {
+	&:before,
+	&:after {
+		content: "";
+		display: table;
+	}
+	&:after {
+		clear: both;
+		overflow: hidden;
+	}
+}
