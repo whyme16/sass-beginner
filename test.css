@@ -31,4 +31,31 @@ header nav a {
   overflow: hidden;
 }
 
+button {
+  -webkit-border-radius: 20px;
+  -border-radius: 20px;
+  width: 80px;
+  height: 30px;
+  margin-top: -15px;
+  margin-left: -40px;
+  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.5), 0 0 2px rgba(0, 0, 0, 0.2);
+  -box-shadow: 0 0 1px rgba(0, 0, 0, 0.5), 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+.btn, .btn-second, .btn-primary1 {
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  font-size: 14px;
+}
+
+.btn-primary1 {
+  background-color: #f36;
+  color: #fff;
+}
+
+.btn-second {
+  background-color: orange;
+  color: #fff;
+}
+
 /*# sourceMappingURL=test.css.map */

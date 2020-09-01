@@ -12,8 +12,9 @@ $btn-primary-border: darken($btn-primary-bg, 5%) !default;
 .btn-primary {
 	background-color: $btn-primary-bg;
 	color: $btn-primary-color;
-	border: 1px solid $btn-primary-border;
+	border: 1px solid $btn-primary-border;	
 }
+
 // Selector Nesting
 nav {
 	a {
@@ -44,4 +45,68 @@ nav {
 		clear: both;
 		overflow: hidden;
 	}
+}
+
+// Mixin Declaration
+// Without Parameters
+@mixin border-radius {
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+// With Parameters
+@mixin border-radius($radius: 10px) {
+	-webkit-border-radius: $radius;
+	-border-radius: $radius;
+}
+// Complex Mixin
+@mixin box-shadow($shadow...) {
+	@if length($shadow) >= 1 {
+		@include prefixer(box-shadow, $shadow);
+	} @else {
+		$shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+		@include prefixer(box-shadow, $shadow);
+	}
+}
+
+@mixin center($width, $height) {
+	width: $width;
+	height: $height;
+	margin: {
+		top: -($height) / 2;
+		left: -($width) / 2;
+	}
+}
+
+@mixin box-shadow1($shadows...) {
+	@if length($shadows) >= 1 {
+		-webkit-box-shadow: $shadows;
+		-box-shadow: $shadows;
+	} @else {
+		$shadows: 0 0 2px rgba(#000, .25);
+		-webkit-box-shadow: $shadows;
+		box-shadow: $shadows;
+	}
+}
+
+button {
+	@include border-radius(20px);
+	@include center(80px, 30px);
+	@include box-shadow1(0 0 1px rgba(#000, .5), 0 0 2px rgba(#000, .2));
+}
+
+// Extension / Inheritance
+.btn {
+	border: 1px solid #ccc;
+	padding: 6px 10px;
+	font-size: 14px;
+}
+.btn-primary1 {
+	background-color: #f36;
+	color: #fff;
+	@extend .btn;
+}
+.btn-second {
+	background-color: orange;
+	color: #fff;
+	@extend .btn;
 }
