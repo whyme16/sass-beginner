@@ -58,4 +58,12 @@ button {
   color: #fff;
 }
 
+.block, .btn, .btn-primary1, .btn-second {
+  margin-top: 5px;
+}
+
+.block span, .btn, .btn-primary1, .btn-second {
+  padding-top: 5px;
+}
+
 /*# sourceMappingURL=test.css.map */
