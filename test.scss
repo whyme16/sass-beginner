@@ -160,3 +160,26 @@ $flag: "status";
 	@extend %updated-#{$flag};
 	@extend .selected-#{$flag};
 }
+
+// String
+@mixin firefox-message($selector) {
+	body.firefox #{$selector}:before {
+		content: "Hi, Firefox users!";
+	}
+}
+@include firefox-message(".header");
+
+// Sum / Minus
+.box1 { width: 20px + 8in; }
+
+// Multiplication
+.box2 { width: 10px * 2; }
+// .box2 { width: 10px * 2px; } // INVALID
+
+// Division
+.box3 { width: (100px / 2); }
+.box4 { width: 100px / 2 + 2in; }
+$width: 1000px;
+.item { width: $width / 10; }
+
+.box5 { width: (1000px / 100px); }

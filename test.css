@@ -92,4 +92,32 @@ header-text-big {
   font-weight: bold;
 }
 
+body.firefox .header:before {
+  content: "Hi, Firefox users!";
+}
+
+.box1 {
+  width: 788px;
+}
+
+.box2 {
+  width: 20px;
+}
+
+.box3 {
+  width: 50px;
+}
+
+.box4 {
+  width: 242px;
+}
+
+.item {
+  width: 100px;
+}
+
+.box5 {
+  width: 10;
+}
+
 /*# sourceMappingURL=test.css.map */
