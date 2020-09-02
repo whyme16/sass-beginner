@@ -112,4 +112,67 @@ span-12 {
   background: url("/images/avatars/kuroir.png") no-repeat;
 }
 
+.test1 {
+  content: Hello Sass!;
+}
+
+.test2 {
+  content: 'Hello Sass!';
+}
+
+.test3 {
+  content: I'm Web Designer;
+}
+
+.test4 {
+  content: "Hello Sass!";
+}
+
+.test1a {
+  content: "Hello Sass!";
+}
+
+.test2a {
+  content: "Hello Sass!";
+}
+
+.test3a {
+  content: " ";
+}
+
+.test1b {
+  text: AAAAA;
+}
+
+.test2b {
+  text: AA-AAAA-AAA;
+}
+
+.test3b {
+  text: aaaaa;
+}
+
+.test4b {
+  text: aa-aaaa-aaa;
+}
+
+.num1 {
+  width: 20%;
+  height: 20%;
+  margin-top: 20%;
+}
+
+.num2 {
+  width: 1;
+  height: 2%;
+  padding-top: 15px;
+}
+
+.num3 {
+  width: 107px;
+  height: 106px;
+  margin-top: 28.9px;
+  margin-bottom: 0.9475077707;
+}
+
 /*# sourceMappingURL=advanced.css.map */
