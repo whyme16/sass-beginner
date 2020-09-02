@@ -120,4 +120,17 @@ body.firefox .header:before {
   width: 10;
 }
 
+.box6:before {
+  content: "Hello Sass!";
+}
+
+div {
+  cursor: e-resize;
+}
+
+p:before {
+  content: "Foo Bar";
+  font-family: san-serif;
+}
+
 /*# sourceMappingURL=test.css.map */

@@ -183,3 +183,14 @@ $width: 1000px;
 .item { width: $width / 10; }
 
 .box5 { width: (1000px / 100px); }
+
+// String Operations
+$content: "Hello" + " " + "Sass!";
+.box6:before { content: $content; }
+
+div { cursor: e + -resize; }
+
+p:before {
+	content: "Foo " + Bar;
+	font-family: san- + "serif";
+}
