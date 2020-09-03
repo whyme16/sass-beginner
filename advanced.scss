@@ -34,7 +34,7 @@ $grid-gutter: 20px !default;
     margin-right: $grid-gutter / 2;
 }
 @for $i from 1 through 12 {
-    #{$grid-prefix}-#{$i} {
+    .#{$grid-prefix}-#{$i} {
         width: $grid-width * $i + $grid-gutter * ($i - 1);
         @extend %grid;
     }
@@ -107,3 +107,110 @@ $list: adam john wynn mason kuroir;
     margin-bottom: random();
 }
 
+// Introspection Functions
+@mixin adjust-location($x, $y) {
+    @if unitless($x) {
+        $x: 1px * $x;
+    }
+    @if unitless($y) {
+        $y: 1px * $y;
+    }
+    position: relative;
+    left: $x;
+    top: $y;
+}
+.botton {
+    @include adjust-location(20px, 30);
+}
+
+// Map
+$theme: (
+    default: (
+        bg-color: #fff,
+        text-color: #444,
+        link-color: #39f
+    ),
+    primary: (
+        bg-color: #000,
+	    text-color: #444,
+	    link-color: #39f
+    ),
+    negative: (
+        bg-color: #f36,
+	    text-color: #fefefe,
+	    link-color: #d4e
+    )
+);
+
+$social-colors: (
+    dribble: #ea4c89,
+    facebook: #3b5998,
+    github: #171515,
+    google: #db4437,
+    twitter: #55acee
+);
+
+// @function colors($color) {
+//     @if not map-has-key($social-colors, $color) {
+//         @warn "No color found for `#{$color}` in $social-colors map. Property omitted.";
+//     }
+//     @return map-get($social-colors, $color);
+// }
+
+// @each $social-network, $social-color in $social-colors {
+//     .btn-#{$social-network} {
+//         color: colors($social-network);
+//     }
+// }
+
+// .btn-facebook {    
+//     color: colors(facebook);
+// }
+// .btn-weibo {
+//     font-size: 12px;    
+//     color: colors(weibo);
+// }
+
+@function colors($color) {
+    $names: map-keys($social-colors);
+    @if not index($names, $color) {
+        @warn "Warning `#{$color} is not a valid color name.`";
+    }
+    @return map-get($social-colors, $color);
+}
+
+// @each $name in map-keys($social-colors) {
+//     .btn-#{$name} {
+//         color: colors($name);
+//     }
+// }
+@for $i from 1 through length(map-keys($social-colors)) {
+    .btn-#{nth(map-keys($social-colors), $i)} {
+        color: colors(nth(map-keys($social-colors), $i));
+    }
+}
+
+
+// map-values($map), map-merge($map1, $map2)
+.color-map {
+    content: map-values($social-colors);
+}
+
+// map 1
+$color: (
+    text: #f36,
+    link: #f63,
+    border: #ddd,
+    background: #fff
+);
+$typo: (
+    font-size: 12px,
+    line-height: 1.6
+);
+$newmap: map-merge($color, $typo);
+
+#newMap {
+    @each $prop, $val in $newmap {
+        #{$prop}: $val;
+    }
+}
