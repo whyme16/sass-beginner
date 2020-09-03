@@ -214,3 +214,38 @@ $newmap: map-merge($color, $typo);
         #{$prop}: $val;
     }
 }
+
+// Color Functions
+// RGB()
+// RGBA()
+$color: #f36;
+$bgColor: orange;
+$borderColor: green;
+.rgba {
+    color: rgba($color, .5);
+    background: rgba($bgColor, .5);
+    border-color: rgba($borderColor, .5);
+}
+
+// red(), green(), blue()
+.container-wrap {
+    @if red($color) > 50 {
+        color: #FFF;
+    } @else if red($color) < 50 {
+        color: #000;
+    }
+}
+
+// mix()
+$color1: #a63;
+$color2: #fff;
+$bgColor1: #f36;
+$bgColor2: #e36;
+$borderColor1:#c36;
+$borderColor2:#b36;
+
+.mix {
+  background: mix($bgColor1, $bgColor2, .75);
+  color: mix($color1, $color2, .25);
+  border-color: mix($borderColor1, $bgColor2, .05);
+}
